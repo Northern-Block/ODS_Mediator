@@ -1,7 +1,7 @@
 kind: Template
 apiVersion: template.openshift.io/v1
 metadata:
-  name: candy-mediator
+  name: candy-mediator2
   annotations:
     description: mediator deployment template
     tags: experimentation, mediator, receiver
@@ -12,19 +12,19 @@ objects:
 - kind: ImageStream
   apiVersion: v1
   metadata:
-    name: candy-mediator1
+    name: candy-agent
 - kind: BuildConfig
   apiVersion: v1
   metadata:
     labels:
-      app: candy-mediator1
-    name: candy-mediator1
+      app: candy-agent
+    name: candy-agent
   spec:
     nodeSelector: null
     output:
       to:
         kind: ImageStreamTag
-        name: 'candy-medaitor1:latest'
+        name: 'candy-agent:latest'
     resources: {}
     successfulBuildsHistoryLimit: 5
     failedBuildsHistoryLimit: 5
@@ -37,7 +37,7 @@ objects:
       contextDir: docker
       type: Git
       git:
-        uri: 'https://github.com/Northern-Block/ODS_Mediator.git'
+        uri: 'https://github.com/weiiv/candi-infra.git'
     triggers:
       - type: ConfigChange
     runPolicy: Serial
@@ -68,7 +68,7 @@ objects:
             - candy-mediator
           from:
             kind: ImageStreamTag
-            name: 'candy-mediator:latest'
+            name: 'candy-agent:latest'
     replicas: 1
     revisionHistoryLimit: 10
     test: false
