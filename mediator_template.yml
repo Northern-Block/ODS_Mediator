@@ -12,19 +12,19 @@ objects:
 - kind: ImageStream
   apiVersion: v1
   metadata:
-    name: candy-mediator
+    name: candy-mediator1
 - kind: BuildConfig
   apiVersion: v1
   metadata:
     labels:
-      app: candy-mediator
-    name: candy-medaitor
+      app: candy-mediator1
+    name: candy-mediator1
   spec:
     nodeSelector: null
     output:
       to:
         kind: ImageStreamTag
-        name: 'candy-medaitor:latest'
+        name: 'candy-medaitor1:latest'
     resources: {}
     successfulBuildsHistoryLimit: 5
     failedBuildsHistoryLimit: 5
