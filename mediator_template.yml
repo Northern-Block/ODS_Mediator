@@ -37,7 +37,7 @@ objects:
       contextDir: docker
       type: Git
       git:
-        uri: 'https://github.com/hyperledger/aries-mediator-service.git'
+        uri: 'https://github.com/Northern-Block/ODS_Mediator.git'
     triggers:
       - type: ConfigChange
     runPolicy: Serial
