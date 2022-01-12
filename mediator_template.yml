@@ -1,7 +1,7 @@
 kind: Template
 apiVersion: template.openshift.io/v1
 metadata:
-  name: candy-mediator1
+  name: candy-mediator
   annotations:
     description: mediator deployment template
     tags: experimentation, mediator, receiver
